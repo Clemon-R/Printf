@@ -5,7 +5,7 @@
 ** Login   <raphael.goulmot@epitech.net>
 ** 
 ** Started on  Mon Nov 14 14:10:22 2016 Raphaël Goulmot
-** Last update Fri Nov 18 10:05:51 2016 Raphaël Goulmot
+** Last update Fri Nov 18 16:14:57 2016 Raphaël Goulmot
 */
 
 #include "utils.h"
@@ -63,7 +63,7 @@ void	my_printf(char	*str, ...)
 	    ptrsFunction(str[index] != 'u' ? 'i' : 'u', &ap, ""
 			 , str[index - 1] == '+');
 	}
-      else
+      else if (str[index] > 0)
 	my_putchar(str[index]);
       index++;
     }
