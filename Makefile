@@ -5,7 +5,7 @@
 ## Login   <raphael.goulmot@epitech.net>
 ## 
 ## Started on  Mon Nov  7 16:40:32 2016 Raphaël Goulmot
-## Last update Fri Nov 18 09:40:49 2016 Raphaël Goulmot
+## Last update Fri Nov 18 10:46:27 2016 Raphaël Goulmot
 ##
 
 SRC	=	src/my_put_nbr.c		\
@@ -29,6 +29,7 @@ all:	${NAME}
 
 ${NAME}:$(OBJ)
 	ar rc $(NAME) $(OBJ)
+	ranlib $(NAME)
 
 fclean:	clean
 	rm -f $(NAME) $(NAME)~
