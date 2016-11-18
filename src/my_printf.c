@@ -5,7 +5,7 @@
 ** Login   <raphael.goulmot@epitech.net>
 ** 
 ** Started on  Mon Nov 14 14:10:22 2016 Raphaël Goulmot
-** Last update Fri Nov 18 09:43:05 2016 Raphaël Goulmot
+** Last update Fri Nov 18 10:05:51 2016 Raphaël Goulmot
 */
 
 #include "utils.h"
@@ -55,7 +55,8 @@ void	my_printf(char	*str, ...)
 	  if (str[index] == 'X' || str[index] == 'x'
 	      || str[index] == 'b' || str[index] == 'o')
 	    ptrsFunction('b', &ap, str[index] == 'o' ? "01234567"
-			 : str[index] == 'b' ? "01" : "", str[index - 1] != '%');
+	    : str[index] == 'b' ? "01" : str[index] == 'X' ? "0123456789ABCEDF"
+		: "0123456789abcdef", str[index - 1] != '%');
 	  else if (str[index] == 's' || str[index] == 'S')
 	    ptrsFunction(str[index], &ap, "", 0);
 	  else if (str[index] == 'i' || str[index] == 'd' || str[index] == 'u')
