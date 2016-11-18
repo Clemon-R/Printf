@@ -5,14 +5,14 @@
 ** Login   <raphael.goulmot@epitech.net>
 ** 
 ** Started on  Thu Nov  3 14:21:18 2016 Raphaël Goulmot
-** Last update Thu Nov 10 20:15:17 2016 Raphaël Goulmot
+** Last update Tue Nov 15 16:37:24 2016 Raphaël Goulmot
 */
 
 #include "utils.h"
 
-void	my_put_nbr(int nbr)
+void	my_put_nbr(long nbr, char plus)
 {
-  int	power;
+  long	power;
 
   power = 1;
   if (nbr == 0)
@@ -21,10 +21,10 @@ void	my_put_nbr(int nbr)
       return;
     }
   if (nbr < 0)
-    {
-      my_putchar('-');
-      nbr *= -1;
-    }
+    my_putchar('-');
+  else if (plus)
+    my_putchar('+');
+  nbr *= nbr < 0 ? -1 : 1;
   while (power <= nbr)
     power *= 10;
   power /= 10;

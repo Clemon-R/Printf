@@ -5,7 +5,7 @@
 ## Login   <raphael.goulmot@epitech.net>
 ## 
 ## Started on  Mon Nov  7 16:40:32 2016 Raphaël Goulmot
-## Last update Thu Nov 10 19:58:01 2016 Raphaël Goulmot
+## Last update Mon Nov 14 14:27:29 2016 Raphaël Goulmot
 ##
 
 SRC	=	src/my_put_nbr.c		\
@@ -13,6 +13,8 @@ SRC	=	src/my_put_nbr.c		\
 		src/my_putchar.c		\
 		src/my_putstr.c			\
 		src/my_power.c			\
+		src/my_putstr_print.c		\
+		src/my_printf.c			\
 		src/my_putnbr_base.c
 
 OBJ	=	$(SRC:.c=.o)
@@ -37,3 +39,6 @@ clean:
 	rm -f Makefile~
 
 re:	fclean ${NAME}
+
+build:
+	gcc *.c -lmy -L. -Isrc
