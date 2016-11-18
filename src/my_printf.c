@@ -5,7 +5,7 @@
 ** Login   <raphael.goulmot@epitech.net>
 ** 
 ** Started on  Mon Nov 14 14:10:22 2016 Raphaël Goulmot
-** Last update Fri Nov 18 16:14:57 2016 Raphaël Goulmot
+** Last update Fri Nov 18 16:25:33 2016 Raphaël Goulmot
 */
 
 #include "utils.h"
@@ -47,9 +47,9 @@ void	my_printf(char	*str, ...)
 
   index  = 0;
   va_start(ap, str);
-  while (str[index])
+  while (str[index++])
     {
-      if (str[index] == '%' && ++index)
+      if (str[index - 1] == '%')
 	{
 	  paramPrintf(str, &index);
 	  if (str[index] == 'X' || str[index] == 'x'
@@ -63,9 +63,8 @@ void	my_printf(char	*str, ...)
 	    ptrsFunction(str[index] != 'u' ? 'i' : 'u', &ap, ""
 			 , str[index - 1] == '+');
 	}
-      else if (str[index] > 0)
-	my_putchar(str[index]);
-      index++;
+      else if (str[index - 1] > 0)
+	my_putchar(str[index - 1]);
     }
   va_end(ap);
 }
