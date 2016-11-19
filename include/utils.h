@@ -5,7 +5,7 @@
 ** Login   <raphael.goulmot@epitech.net>
 ** 
 ** Started on  Tue Nov  8 09:42:54 2016 Raphaël Goulmot
-** Last update Tue Nov 15 17:47:52 2016 Raphaël Goulmot
+** Last update Sat Nov 19 23:55:00 2016 Raphaël Goulmot
 */
 
 #ifndef UTILS_H_
@@ -21,7 +21,7 @@ int	my_power(int, int);
 void	my_putnbr_base(int, char *);
 void	my_putstr_print(char *);
 void	ptrsFunction(char, va_list *, char *, char);
-void	paramPrintf(char *, int *);
+char	*paramPrintf(char *, int *);
 void	my_printf(char *, ...);
 
 #endif /* !UTILS_H_ */
