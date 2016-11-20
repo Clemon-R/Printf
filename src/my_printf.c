@@ -5,7 +5,7 @@
 ** Login   <raphael.goulmot@epitech.net>
 ** 
 ** Started on  Mon Nov 14 14:10:22 2016 Raphaël Goulmot
-** Last update Sun Nov 20 00:14:13 2016 Raphaël Goulmot
+** Last update Sun Nov 20 21:12:13 2016 Raphaël Goulmot
 */
 
 #include "utils.h"
@@ -37,8 +37,8 @@ char	*paramPrintf(char *str, int *i)
   char	base;
 
   base = 0;
-  while (!((str[*i] >= 'a' && str[*i] <= 'z')
-	|| (str[*i] >= 'A' && str[*i] <= 'Z')) && ++(*i))
+  while (((str[*i] >= '0' && str[*i] <= '9')
+	|| str[*i] == '+' || str[*i] == '#') && ++(*i))
     if (str[*i - 1] == '#')
       base = 1;
   if ((str[*i] == 'x' || str[*i] == 'X' || str[*i] == 'o') && base)
@@ -53,6 +53,8 @@ void	my_printf(char	*str, ...)
   int	index;
 
   index  = 0;
+  if (str == 0)
+    return;
   va_start(ap, str);
   while (str[index++])
     {
@@ -64,6 +66,5 @@ void	my_printf(char	*str, ...)
       else if (str[index - 1] > 0)
 	my_putchar(str[index - 1]);
     }
-  my_putchar('\n');
   va_end(ap);
 }
